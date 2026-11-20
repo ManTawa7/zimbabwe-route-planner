@@ -19,6 +19,20 @@ class SearchResult:
     runtime_ms: float
 
 
+def _segment_km(graph: RoadGraph, u: str, v: str) -> float:
+    if hasattr(graph, "get_edge_distance"):
+        return float(graph.get_edge_distance(u, v))
+    if hasattr(graph, "edge_distance"):
+        return float(graph.edge_distance(u, v))
+    for edge in graph.adj.get(u, []):
+        other = edge.get("to") if isinstance(edge, dict) else getattr(edge, "to", None)
+        if other == v:
+            dist = edge.get("distance_km") if isinstance(edge, dict) else getattr(edge, "distance_km", None)
+            if dist is not None:
+                return float(dist)
+    raise KeyError(f"No edge found between {u} and {v}")
+
+
 def find_route(
     graph: RoadGraph,
     start: str,
@@ -67,7 +81,7 @@ def find_route(
             path.reverse()
 
             total_km = sum(
-                graph.edge_distance(path[i], path[i + 1])
+                _segment_km(graph, path[i], path[i + 1])
                 for i in range(len(path) - 1)
             )
             elapsed_ms = (time.perf_counter() - t_start) * 1000.0
@@ -90,11 +104,22 @@ def find_route(
             )
 
         for edge in graph.adj.get(current, []):
-            neighbor = edge.to
-            if neighbor in closed:
+            neighbor = edge.get("to") if isinstance(edge, dict) else getattr(edge, "to", None)
+            if not neighbor or neighbor in closed:
                 continue
 
-            step_cost = edge.distance_km if mode == "distance" else 1.0
+            if mode == "distance":
+                step_cost = (
+                    edge.get("distance_km")
+                    if isinstance(edge, dict)
+                    else getattr(edge, "distance_km", None)
+                )
+                if step_cost is None:
+                    step_cost = _segment_km(graph, current, neighbor)
+                step_cost = float(step_cost)
+            else:
+                step_cost = 1.0
+
             tentative_g = g_curr + step_cost
 
             if tentative_g < g_cost.get(neighbor, float("inf")):
