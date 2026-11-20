@@ -1,0 +1,13 @@
+origin,destination,astar_nodes_expanded,ucs_nodes_expanded,nodes_saved_by_astar,astar_runtime_ms,ucs_runtime_ms,astar_distance_km,astar_stops,fewest_stops_count,fewest_stops_distance_km,astar_path,fewest_stops_path
+Harare,Bulawayo,10,26,16,0.1487,0.1324,441.0,6,5,702.0,Harare -> Norton -> Chegutu -> Kadoma -> Kwekwe -> Gweru -> Bulawayo,Harare -> Chivhu -> Masvingo -> Zvishavane -> Gwanda -> Bulawayo
+Harare,Mutare,5,17,12,0.0787,0.0614,263.0,4,4,263.0,Harare -> Ruwa -> Marondera -> Rusape -> Mutare,Harare -> Ruwa -> Marondera -> Rusape -> Mutare
+Harare,Masvingo,5,20,15,0.0394,0.0364,292.0,2,2,292.0,Harare -> Chivhu -> Masvingo,Harare -> Chivhu -> Masvingo
+Harare,Victoria Falls,25,35,10,0.1,0.0682,880.0,9,8,1141.0,Harare -> Norton -> Chegutu -> Kadoma -> Kwekwe -> Gweru -> Bulawayo -> Lupane -> Hwange -> Victoria Falls,Harare -> Chivhu -> Masvingo -> Zvishavane -> Gwanda -> Bulawayo -> Lupane -> Hwange -> Victoria Falls
+Harare,Kariba,9,23,14,0.0429,0.0373,365.0,2,2,365.0,Harare -> Chinhoyi -> Kariba,Harare -> Chinhoyi -> Kariba
+Bulawayo,Mutare,17,31,14,0.081,0.0534,704.0,10,8,1173.0,Bulawayo -> Gweru -> Kwekwe -> Kadoma -> Chegutu -> Norton -> Harare -> Ruwa -> Marondera -> Rusape -> Mutare,Bulawayo -> Gwanda -> Beitbridge -> Masvingo -> Triangle -> Chiredzi -> Chipinge -> Chimanimani -> Mutare
+Bulawayo,Beitbridge,3,10,7,0.0256,0.0198,323.0,2,2,323.0,Bulawayo -> Gwanda -> Beitbridge,Bulawayo -> Gwanda -> Beitbridge
+Gweru,Chiredzi,7,27,20,0.0493,0.0495,454.0,5,5,454.0,Gweru -> Shurugwi -> Zvishavane -> Masvingo -> Triangle -> Chiredzi,Gweru -> Shurugwi -> Zvishavane -> Masvingo -> Triangle -> Chiredzi
+Plumtree,Nyanga,17,32,15,0.0857,0.053,809.0,11,10,1271.0,Plumtree -> Bulawayo -> Gweru -> Kwekwe -> Kadoma -> Chegutu -> Norton -> Harare -> Ruwa -> Marondera -> Rusape -> Nyanga,Plumtree -> Bulawayo -> Gwanda -> Beitbridge -> Masvingo -> Chivhu -> Harare -> Ruwa -> Marondera -> Rusape -> Nyanga
+Chipinge,Kariba,18,31,13,0.0779,0.0518,830.0,8,7,1017.0,Chipinge -> Chimanimani -> Mutare -> Rusape -> Marondera -> Ruwa -> Harare -> Chinhoyi -> Kariba,Chipinge -> Chiredzi -> Triangle -> Masvingo -> Chivhu -> Harare -> Chinhoyi -> Kariba
+Bindura,Gwanda,21,31,10,0.0922,0.067,643.0,11,7,669.0,Bindura -> Concession -> Mazowe -> Harare -> Norton -> Chegutu -> Kadoma -> Kwekwe -> Gweru -> Shurugwi -> Zvishavane -> Gwanda,Bindura -> Concession -> Mazowe -> Harare -> Chivhu -> Masvingo -> Zvishavane -> Gwanda
+Kwekwe,Chimanimani,18,33,15,0.1202,0.0678,628.0,9,8,743.0,Kwekwe -> Kadoma -> Chegutu -> Norton -> Harare -> Ruwa -> Marondera -> Rusape -> Mutare -> Chimanimani,Kwekwe -> Gweru -> Shurugwi -> Zvishavane -> Masvingo -> Triangle -> Chiredzi -> Chipinge -> Chimanimani
